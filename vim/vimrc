@@ -50,11 +50,7 @@ set autoindent
 " set cindent
 
 " 设置缩进步长
-set cinwords=if,else,while,do,for,switch,case
-set expandtab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
+set softtabstop=2
 
 " 不要换行
 set nowrap
@@ -70,25 +66,6 @@ nmap <F3> <ESC>:NERDTreeToggle<RETURN>
 colorscheme darkburn
 set t_Co=256
 
-
-""""""""""""""""""""""""""""""""""
-" go config
-"""""""""""""""""""""""""""""""""
-" Some Linux distributions set filetype in /etc/vimrc.
-" Clear filetype flags before changing runtimepath to force Vim to
-if exists("g:did_load_filetypes")
-  filetype off
-  filetype plugin indent off
-endif
-set runtimepath+=$GOROOT/misc/vim " replace $GOROOT with the output
-filetype plugin indent on
-
-
-" gofmt source files when saved
-" autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-
-
 " 个人签名
 function Signature()
   call setline(1,"/**********************************************")
@@ -99,4 +76,3 @@ function Signature()
   call append(line(".")+4,"**********************************************/")
 endf
 nmap <F4> <Esc>:0<ESC>:call Signature()<CR><Esc>:$<Esc>o
-
