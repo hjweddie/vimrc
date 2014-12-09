@@ -5,98 +5,94 @@ set fenc=utf8
 set fencs=utf-8,usc-bom,euc-jp,gb18030,gb2312,cp936,gbk
 set fdm=marker
 
-" 在处理未保存或只读文件的时候，弹出确认
-set confirm
-
-" 设置语法高亮
-syntax on
-
 " 不生成swap文件
 setlocal noswapfile
 
 " 显示行号
 set number
 
-" 光标不闪烁
-set novisualbell
-
-" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
-" set mouse=a
-" set selection=exclusive
-" set selectmode=mouse,key
-
-""""""""""""""""""""
-" 搜索与匹配
-""""""""""""""""""""
-" 高亮显示匹配括号
-set showmatch
-
-" 通过使用:commands命令，告诉我们文件的哪一行被改变
-" set report=0
-
-""""""""""""""""""""
-" 文本格式和排版
-""""""""""""""""""""
-" 自动格式化
-set formatoptions=tcrqn
-
 " 继承前一行的缩进方式，特别适合于多行注释
 set autoindent
 
-" 为C程序提供自动缩进
-" set smartindent
-
-" 使用C样式的缩进
-" set cindent
-
-" 设置缩进步长
-set cinwords=if,else,while,do,for,switch,case
-set expandtab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-
-" 不要换行
-set nowrap
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdtree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeWinPos = "left"
-
-let NERDTreeWinSize = 31
-
-nmap <F3> <ESC>:NERDTreeToggle<RETURN>
-colorscheme darkburn
-set t_Co=256
-
-
-""""""""""""""""""""""""""""""""""
-" go config
-"""""""""""""""""""""""""""""""""
-" Some Linux distributions set filetype in /etc/vimrc.
-" Clear filetype flags before changing runtimepath to force Vim to
-if exists("g:did_load_filetypes")
-  filetype off
-  filetype plugin indent off
-endif
-set runtimepath+=$GOROOT/misc/vim " replace $GOROOT with the output
-filetype plugin indent on
-
-
-" gofmt source files when saved
-" autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-
-
 " 个人签名
 function Signature()
-  call setline(1,"/**********************************************")
-  call append(line(". "),"  Author:   eddiepersona@qq.com")
-  call append(line(". ")+1,"  Time:     ".strftime("%c"))
-  call append(line(".")+2,"  File:     ".expand("%"))
-  call append(line(".")+3,"  Desc:   ")
-  call append(line(".")+4,"**********************************************/")
+  call setline(1,"/*")
+  call append(line(". "),"*  Author:   huangjunwei@youmi.net")
+  call append(line(". ")+1,"*  Time:     ".strftime("%c"))
+  call append(line(".")+2,"*  File:     ".expand("%"))
+  call append(line(".")+3,"*  Desc:   ")
+  call append(line(".")+4," */")
 endf
 nmap <F4> <Esc>:0<ESC>:call Signature()<CR><Esc>:$<Esc>o
 
+"""""""""""""""""""""""
+" setting of pathogen
+"""""""""""""""""""""""
+execute pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ " nerdtree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeWinPos = "left"
+ 
+let NERDTreeWinSize = 31
+ 
+" nmap <F3> <ESC>:NERDTreeToggle<RETURN>
+map <C-n> :NERDTreeToggle<CR>
+set t_Co=256
+
+
+"""""""""""""""""""
+" setting of vundle
+"""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+let $GIT_SSL_NO_VERIFY = 'true'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'https://github.com/wincent/command-t.git'
+" Plugin '/home/eddie/Downloads/command-t'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+Plugin 'fatih/vim-go'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+" 设置语法高亮
+syntax on
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
