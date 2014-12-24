@@ -5,6 +5,9 @@ set fenc=utf8
 set fencs=utf-8,usc-bom,euc-jp,gb18030,gb2312,cp936,gbk
 set fdm=marker
 
+" 设置语法高亮
+syntax on
+
 " 不生成swap文件
 setlocal noswapfile
 
@@ -30,7 +33,17 @@ nmap <F4> <Esc>:0<ESC>:call Signature()<CR><Esc>:$<Esc>o
 """""""""""""""""""""""
 nmap <F8> :TagbarToggle<CR>
 
-"""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ " setting of multi_cursor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-x>'
+let g:multi_cursor_prev_key='<C-z>'
+let g:multi_cursor_skip_key='<C-c>'
+let g:multi_cursor_quit_key='<Esc>'
+
+
+""""""""""""""""""""""s
 " setting of pathogen
 """""""""""""""""""""""
 execute pathogen#infect()
@@ -39,9 +52,9 @@ execute pathogen#infect()
  " nerdtree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeWinPos = "left"
- 
+
 let NERDTreeWinSize = 31
- 
+
 " nmap <F3> <ESC>:NERDTreeToggle<RETURN>
 map <C-n> :NERDTreeToggle<CR>
 set t_Co=256
@@ -93,11 +106,9 @@ Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-" 设置语法高亮
-syntax on
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
