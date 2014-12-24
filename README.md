@@ -22,7 +22,11 @@ my vim config
 
 > 安装 nerdcommenter https://github.com/scrooloose/nerdcommente       # 批量注释
 
-> 安装 vim-surround https://github.com/tpope/vim-surround             # 自动字符两端操作
+> 安装 vim-surround https://github.com/tpope/vim-surround             # 自动字符两端作
+
+> 安装 vim-trailing-whitespace https://github.com/bronson/vim-trailing-whitespace # 行尾空格标红
+
+> 安装 vim-expand-region https://github.com/terryma/vim-expand-region # visual mode 自由扩展
 
 > 选择喜欢的配色方案(似乎terminator和guake下不起作用)，如： solarized（https://github.com/Anthony25/gnome-terminal-colors-solarized） 或 molokai
 ``````
