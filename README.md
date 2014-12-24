@@ -16,5 +16,5 @@ my vim config
 
 > 安装 syntastic https://github.com/scrooloose/syntastic              # 语法
 
-> 选择喜欢的配色方案(似乎terminator和guake下不起作)，如： solarized（https://github.com/Anthony25/gnome-terminal-colors-solarized） 或 molokai
+> 选择喜欢的配色方案(似乎terminator和guake下不起作用)，如： solarized（https://github.com/Anthony25/gnome-terminal-colors-solarized） 或 molokai
 ``````
