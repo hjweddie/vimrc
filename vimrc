@@ -21,9 +21,14 @@ function Signature()
   call append(line(". ")+1,"*  Time:     ".strftime("%c"))
   call append(line(".")+2,"*  File:     ".expand("%"))
   call append(line(".")+3,"*  Desc:   ")
-  call append(line(".")+4," */")
+  call append(line(".")+4,"*/")
 endf
 nmap <F4> <Esc>:0<ESC>:call Signature()<CR><Esc>:$<Esc>o
+
+"""""""""""""""""""""""
+" setting of tagbar
+"""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""
 " setting of pathogen
@@ -40,6 +45,12 @@ let NERDTreeWinSize = 31
 " nmap <F3> <ESC>:NERDTreeToggle<RETURN>
 map <C-n> :NERDTreeToggle<CR>
 set t_Co=256
+
+"""""""""""""""""""
+" delimitMate
+"""""""""""""""""""
+let delimitMate_autoclose = 1
+let delimitMate_expand_space = 1
 
 
 """""""""""""""""""
