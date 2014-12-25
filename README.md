@@ -20,7 +20,7 @@ my vim config
 
 > 安装 tagbar https://github.com/majutsushi/tagbar                    # 代码结构编译工具，需安装exuberant-ctags
 
-> 安装 nerdcommenter https://github.com/scrooloose/nerdcommente       # 批量注释
+> 安装 nerdcommenter https://github.com/scrooloose/nerdcommenter       # 批量注释
 
 > 安装 vim-surround https://github.com/tpope/vim-surround             # 自动字符两端作
 
