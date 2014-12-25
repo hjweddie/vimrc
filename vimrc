@@ -42,6 +42,11 @@ let g:multi_cursor_prev_key='<C-z>'
 let g:multi_cursor_skip_key='<C-c>'
 let g:multi_cursor_quit_key='<Esc>'
 
+"""""""""""""""""""""""
+" setting of tagbar
+"""""""""""""""""""""""
+map H <Plug>(expand_region_expand)
+map L <Plug>(expand_region_shrink)
 
 """"""""""""""""""""""s
 " setting of pathogen
