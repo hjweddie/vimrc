@@ -30,7 +30,9 @@ my vim config
 
 > 安装 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors # 多光标编辑
 
-> 安装 tabular https://github.com/godlygeek/tabular # 自动对齐格式化
+> *安装 tabular https://github.com/godlygeek/tabular # 自动对齐格式化
+
+> *安装 ctrlp https://github.com/kien/ctrlp.vim # 快速文件浏览
 
 > 选择喜欢的配色方案(似乎terminator和guake下不起作用)，如： solarized（https://github.com/Anthony25/gnome-terminal-colors-solarized） 或 molokai
 ``````
