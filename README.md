@@ -32,7 +32,9 @@ my vim config
 
 > 安装 tabular https://github.com/godlygeek/tabular # 自动对齐格式化
 
-> 安装 ctrlp https://github.com/kien/ctrlp.vim # 快速文件浏览
+> 安装 ctrlp https://github.com/kien/ctrlp.vim # 快速文件浏
+
+> 安装 vim-indent-guides https://github.com/nathanaelkane/vim-indent-guides # 垂直对齐辅助线
 
 > 选择喜欢的配色方案(似乎terminator和guake下不起作用)，如： solarized（https://github.com/Anthony25/gnome-terminal-colors-solarized） 或 molokai
 ``````
