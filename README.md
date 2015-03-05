@@ -35,4 +35,7 @@ my vim config
 > 安装 ctrlp https://github.com/kien/ctrlp.vim # 快速文件浏
 
 > 选择喜欢的配色方案(似乎terminator和guake下不起作用)，如： solarized（https://github.com/Anthony25/gnome-terminal-colors-solarized） 或 molokai
+
+> 安装oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh #terminal主
+
 ``````
